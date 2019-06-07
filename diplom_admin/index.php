@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 session_start();
 include_once("config.php");
 $authtxt = "";
-if(isset($_GET['username']))
+if(isset($_POST['username']))
 {
 	$login=mysqli_real_escape_string($db,$_GET['username']);
     $password = md5(mysqli_real_escape_string($db,$_GET["password"]));
@@ -37,14 +37,14 @@ if(isset($_GET['act']))
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Авторизация</title>
-<link rel="stylesheet" href="pages/bootstrap/css/login.css" type="text/css">
+<link rel="stylesheet" href="bootstrap/css/login.css" type="text/css">
 
 <div id="main-wrapper" class="b-login-main-wrapper"><div class="i-report-wr"><div class="i-form-wr"><div class="i-list-wr">
 <div id="overlay" class="hide"></div>
 <div id="content" class="tab-content active" data-tabid="tab1"><div id="login-wrapper">
 
 <div id="login-form"><div id="login-form-form">
-<form name="login" id="logon-form" method="GET" action="">
+<form name="login" id="logon-form" method="POST" action="">
 
 
 <table>
