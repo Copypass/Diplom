@@ -32,19 +32,16 @@ if(!isset($_SESSION["id"]))
 	function()
 	function loadDoc() { 
 	  var xhttp = new XMLHttpRequest(); 
-	  xhttp.onreadystatechange = function() { 
-	  timerId = setTimeout(function(){	  
+	  xhttp.onreadystatechange = function() {   
 	  alert(this.readyState);
 	  alert(this.status);
-	  		if (this.readyState == 4 && this.status == 200) {	 
- 
+	  if (this.readyState == 4 && this.status == 200) {	 
 		  document.getElementById("history").innerHTML = this.responseText; 
 		  clearTimeout(timerId); 
 		  timerId = setTimeout(function(){ loadDoc()}, 1000); 
 		} 
-	  }, 1000); 
 	  }; 
-	  xhttp.open("GET", "https://www.kinopoisk.ru/film/22978", true); 
+	  xhttp.open("GET", "actual_history_update.php", true); 
 	  xhttp.read(); 
 	} 
 	</script> 
