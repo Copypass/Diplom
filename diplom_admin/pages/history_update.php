@@ -44,7 +44,7 @@
 						$alert="class = 'alert-success;'";
 					}else
 					{
-						$alert="class = 'alert-error;"
+						$alert="class = 'alert-error;";
 					}
 					if($img == "") 
 						$img = "../images/null foto.png";
