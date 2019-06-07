@@ -28,16 +28,16 @@ if(!isset($_SESSION["id"]))
     </head>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
-	var timerId = setTimeout(function(){loadDoc()}, 100);
-	alert("123");
+	var timerId = setTimeout(function(){loadDoc();}, 100);
+	
 	function loadDoc() {
+	  alert("123");
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {	
 
 		  document.getElementById("history").innerHTML = this.responseText;
-		  clearTimeout(timerId);
-		  timerId = setTimeout(function(){ loadDoc()}, 1000);
+		  timerId = setTimeout(function(){ loadDoc();}, 1000);
 		}
 	  };
 	  xhttp.open("GET", "actual_history_update.php", true);
