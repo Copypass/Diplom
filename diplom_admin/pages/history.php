@@ -107,10 +107,13 @@ if(!isset($_SESSION["id"]))
                                         <legend>История доступа</legend>
 										<form class="form-horizontal">
 											<div class="control-group">
-											  <label class="control-label" for="date01">Date input</label>
+											  <label class="control-label" for="select01">Сортировка по</label>
 											  <div class="controls">
-												<input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
-												<p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
+												<select id="select01" class="chzn-select">
+												  <option>Пользователям</option>
+												  <option>Точкам доступа</option>
+												  <option>Дате</option>
+												</select>
 											  </div>
 											</div>
 										</form>
