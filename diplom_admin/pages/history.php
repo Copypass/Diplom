@@ -37,7 +37,7 @@ if(!isset($_SESSION["id"]))
 				  timerId = setTimeout(function(){ loadDoc()}, 1000);
 				}
 			  };
-			  xhttp.open("GET", "history_update.php", true);
+			  xhttp.open("GET", "http://192.168.1.54/diplom/pages/history_update.php", true);
 			  xhttp.read();
 			}
 			</script>
