@@ -34,7 +34,7 @@ if(!isset($_SESSION["id"]))
 	  xhttp.onreadystatechange = function() { 
 	  alert(this.readyState);
 	  alert(this.status);
-		if (this.readyState == 4 && this.status == 200) {	 
+		if (this.readyState == 1 && this.status == 0) {	 
  
 		  document.getElementById("history").innerHTML = this.responseText; 
 		  clearTimeout(timerId); 
