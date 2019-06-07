@@ -31,7 +31,6 @@ if(!isset($_SESSION["id"]))
 	var timerId = setTimeout(function(){loadDoc()}, 1000); 
 	function loadDoc() { 
 	  var xhttp = new XMLHttpRequest(); 
-	  xhttp.open("https://corsproxy.github.io", true); 
 	  xhttp.onreadystatechange = function() { 
 		alert(this.readyState);
 		if (this.readyState == 4 && this.status == 200) {	 
@@ -41,7 +40,7 @@ if(!isset($_SESSION["id"]))
 		  timerId = setTimeout(function(){ loadDoc()}, 1000); 
 		} 
 	  }; 
-	  xhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+	  xhttp.open("https://corsproxy.github.io", true); 
 	  xhttp.read(); 
 	} 
 	</script> 
