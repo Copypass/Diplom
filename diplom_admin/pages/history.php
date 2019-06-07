@@ -25,6 +25,22 @@ if(!isset($_SESSION["id"]))
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+			<script type="text/javascript">
+			var timerId = setTimeout(loadDoc(), 1000);
+			function loadDoc() {
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {	
+
+				  document.getElementById("history").innerHTML = this.responseText;
+				  clearTimeout(timerId);
+				  timerId = setTimeout(function(){ loadDoc()}, 1000);
+				}
+			  };
+			  xhttp.open("GET", "history_update.php", true);
+			  xhttp.read();
+			}
+			</script>
     </head>
     
         <body>
@@ -88,10 +104,12 @@ if(!isset($_SESSION["id"]))
                                 <div class="span12">
                                     <form class="form-horizontal">
                                       <fieldset>
+									  Выберите как сортировать данные.
                                         <div class="control-group">
                                           <label class="control-label" for="select01">Сортировать по</label>
                                           <div class="controls">
                                             <select id="select01" class="chzn-select">
+											  <option>Сначала актуальные</option>
                                               <option>Пользователям</option>
                                               <option>Точкам доступа</option>
                                               <option>Группе</option>
@@ -99,9 +117,10 @@ if(!isset($_SESSION["id"]))
                                             </select>
                                           </div>
                                         </div>
+										<div id = "history">
+										</div>
                                       </fieldset>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
