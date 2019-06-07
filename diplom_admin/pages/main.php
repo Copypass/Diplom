@@ -24,25 +24,25 @@ if(!isset($_SESSION["id"]))
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>\
+			<script type="text/javascript">
+			var timerId = setTimeout(function(){loadDoc();}, 100);
+			
+			function loadDoc() {
+			  var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {	
+				  alert("123");
+				  document.getElementById("history").innerHTML = this.responseText;
+				  timerId = setTimeout(function(){ loadDoc();}, 1000);
+				}
+			  };
+			  xhttp.open("GET", "actual_history_update.php", true);
+			  xhttp.read();
+			}
+			</script>
     </head>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript">
-	var timerId = setTimeout(function(){loadDoc();}, 100);
-	
-	function loadDoc() {
-	  var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {	
-		  alert("123");
-		  document.getElementById("history").innerHTML = this.responseText;
-		  timerId = setTimeout(function(){ loadDoc();}, 1000);
-		}
-	  };
-	  xhttp.open("GET", "actual_history_update.php", true);
-	  xhttp.read();
-	}
-	</script>
     <body>
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
