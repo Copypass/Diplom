@@ -28,7 +28,7 @@ if(!isset($_SESSION["id"]))
     </head> 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 	<script type="text/javascript"> 
-	var timerId = setTimeout(loadDoc(), 1000); 
+	var timerId = setTimeout(function(){loadDoc()}, 1000); 
 	function loadDoc() { 
 	  var xhttp = new XMLHttpRequest(); 
 	  xhttp.onreadystatechange = function() { 
