@@ -116,20 +116,10 @@ if(!isset($_SESSION["id"]))
                                             </select>
                                           </div>
                                         </div>
-										<table class="table table-bordered table-striped alert-success">
-										<thead>
-                                            <tr>
-                                                <th>ФИО</th>
-                                                <th>Дверь</th>
-                                                <th>Группа</th>
-												<th>Время</th>
-												<th>Доступ</th>
-                                            </tr>
-                                        </thead>
 										<div id = "history">
-										
+										<?php include_once("history_update.php");?>
 										</div>
-										</table>
+										
                                       </fieldset>
                                     </form>
                                 </div>

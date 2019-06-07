@@ -1,3 +1,13 @@
+ <table class="table table-bordered table-striped">
+										<thead>
+                                            <tr>
+                                                <th>ФИО</th>
+                                                <th>Дверь</th>
+                                                <th>Группа</th>
+												<th>Время</th>
+												<th>Доступ</th>
+                                            </tr>
+                                        </thead>
  <?php
 		error_reporting(E_ALL);
 		ini_set('display_errors', TRUE);
@@ -31,26 +41,17 @@
 					$access = $row["access"];
 					if($access)
 					{
-						$alert="<div class = 'alert alert-success'> Доступ разрешён</div>";
+						$alert="class = 'alert-success;'";
 					}else
 					{
-						$alert="<div class = 'alert alert-error'> Доступ запрещён</div>";
+						$alert="class = 'alert-error;"
 					}
 					if($img == "") 
 						$img = "../images/null foto.png";
-					if(($i%2) != 0)
-					{
-						$section="<div class='row-fluid'>";
-						$section_end = "";
-					}else
-					{
-						$section="";
-						$section_end = "</div>";
-					}
 					echo $section;
 					?>
 
-																		<tr>
+																		<tr <?php echo $alert; ?>>
 																			<td><?php echo $name; ?></td>
 																			<td><?php echo $gate; ?></td>
 																			<td>группа</td>
@@ -68,3 +69,4 @@
 			
 		
 	?>
+	</table>
