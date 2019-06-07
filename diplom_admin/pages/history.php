@@ -31,8 +31,8 @@ if(!isset($_SESSION["id"]))
 			  var xhttp = new XMLHttpRequest();
 			  xhttp.onreadystatechange = function() {
 				  timerId = setTimeout(function(){
-					  alert(this.readyState);
 				  alert(this.readyState);
+				  alert(this.status);
 				if (this.readyState == 4 && this.status == 200) {	
 
 				  document.getElementById("history").innerHTML = this.responseText;
