@@ -27,7 +27,8 @@
 		$section_end = "";
 		if(isset($_SESSION['id']))
 		{
-			$que = mysqli_query($db,'SELECT key_num,identificator.name,identificator.img,identificator.phone,gate.name as "gate",time,access  FROM activation_log JOIN identificator on identificator.key_num = activation_log.key_id JOIN gate on gate.gate_id= activation_log.gate_id ORDER BY time DESC LIMIT 6;');			if ( $que )
+			$que = mysqli_query($db,'SELECT key_num,identificator.name,identificator.img,identificator.phone,gate.name as "gate",time,access  FROM activation_log JOIN identificator on identificator.key_num = activation_log.key_id JOIN gate on gate.gate_id= activation_log.gate_id ORDER BY time DESC LIMIT ');			
+			if ( $que )
 			{
 				while ($row = mysqli_fetch_assoc($que))
 				{
@@ -41,10 +42,10 @@
 					$access = $row["access"];
 					if($access)
 					{
-						$alert="class = 'alert-success;'";
+						$alert="class = 'alert-success'";
 					}else
 					{
-						$alert="class = 'alert-error;";
+						$alert="class = 'alert-error'";
 					}
 					if($img == "") 
 						$img = "../images/null foto.png";
@@ -59,7 +60,6 @@
 																			<td><?php echo $access; ?></td>
 																		</tr>
 																		
-																<?php// echo $alert; ?>
 							<?php
 						
 				}

@@ -117,7 +117,6 @@ if(!isset($_SESSION["id"]))
                                           </div>
                                         </div>
 										<div id = "history">
-										<?php include_once("history_update.php");?>
 										</div>
 										
                                       </fieldset>
