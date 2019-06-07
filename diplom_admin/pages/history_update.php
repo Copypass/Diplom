@@ -42,10 +42,10 @@
 					$access = $row["access"];
 					if($access)
 					{
-						$alert="class = 'alert-success'";
+						$alert="class = 'alert alert-success'";
 					}else
 					{
-						$alert="class = 'alert-error'";
+						$alert="class = 'alert alert-error'";
 					}
 					if($img == "") 
 						$img = "../images/null foto.png";
