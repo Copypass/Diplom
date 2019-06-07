@@ -25,7 +25,9 @@
 		$alert = "";
 		$section = "";
 		$section_end = "";
-			$que = mysqli_query($db,'SELECT key_num,identificator.name,identificator.img,identificator.phone,gate.name as "gate",time,access  FROM activation_log JOIN identificator on identificator.key_num = activation_log.key_id JOIN gate on gate.gate_id= activation_log.gate_id ORDER BY time DESC LIMIT ');			
+		if(isset($_SESSION['id']))
+		{
+			$que = mysqli_query($db,'SELECT key_num,identificator.name,identificator.img,identificator.phone,gate.name as "gate",time,access  FROM activation_log JOIN identificator on identificator.key_num = activation_log.key_id JOIN gate on gate.gate_id= activation_log.gate_id ORDER BY time DESC');			
 			if ( $que )
 			{
 				while ($row = mysqli_fetch_assoc($que))
@@ -63,7 +65,7 @@
 				}
 				
 			} 
-		
+		}
 			
 		
 	?>
