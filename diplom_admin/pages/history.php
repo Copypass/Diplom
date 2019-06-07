@@ -41,7 +41,7 @@ if(!isset($_SESSION["id"]))
 				}
 				;}, 2000);
 			  };
-			  xhttp.open("GET", "history_update.php", true);
+			  xhttp.open("GET", "history_update.php", false);
 			  xhttp.read();
 			}
 			</script>
