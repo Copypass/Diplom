@@ -31,8 +31,9 @@ if(!isset($_SESSION["id"]))
 	var timerId = setTimeout(function(){loadDoc()}, 1000); 
 	function loadDoc() { 
 	  var xhttp = new XMLHttpRequest(); 
-	  xhttp.open("GET", "192.168.1.54/diplom/pages/actual_history_update.php", true); 
+	  xhttp.open("https://corsproxy.github.io", true); 
 	  xhttp.onreadystatechange = function() { 
+		alert(this.readyState);
 		if (this.readyState == 4 && this.status == 200) {	 
  
 		  document.getElementById("history").innerHTML = this.responseText; 
