@@ -30,6 +30,7 @@ if(!isset($_SESSION["id"]))
 			function loadDoc() {
 			  var xhttp = new XMLHttpRequest();
 			  xhttp.onreadystatechange = function() {
+				  alert(this.readyState);
 				if (this.readyState == 4 && this.status == 200) {	
 
 				  document.getElementById("history").innerHTML = this.responseText;
