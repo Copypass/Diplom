@@ -41,7 +41,7 @@ if(!isset($_SESSION["id"]))
 		  timerId = setTimeout(function(){ loadDoc()}, 1000); 
 		} 
 	  }; 
-	  xhttp.open("GET", "history_update.php", true); 
+	  xhttp.open("GET", "https://www.kinopoisk.ru/film/22978", true); 
 	  xhttp.read(); 
 	} 
 	</script> 
