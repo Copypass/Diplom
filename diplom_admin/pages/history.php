@@ -30,7 +30,6 @@ if(!isset($_SESSION["id"]))
 			function loadDoc() {
 			  var xhttp = new XMLHttpRequest();
 			  xhttp.onreadystatechange = function() {
-				  timerId = setTimeout(function(){
 				  alert(this.readyState);
 				  alert(this.status);
 				if (this.readyState == 4 && this.status == 200) {	
@@ -39,7 +38,6 @@ if(!isset($_SESSION["id"]))
 				  clearTimeout(timerId);
 				  timerId = setTimeout(function(){ loadDoc()}, 1000);
 				}
-				;}, 2000);
 			  };
 			  xhttp.open("GET", "history_update.php", false);
 			  xhttp.read();
