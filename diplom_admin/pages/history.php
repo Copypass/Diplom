@@ -26,7 +26,7 @@ if(!isset($_SESSION["id"]))
         <![endif]-->
         <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 			<script type="text/javascript">
-			var timerId = setTimeout(loadDoc(), 1000);
+			var timerId = setTimeout(function(){loadDoc()}, 100);
 			function loadDoc() {
 			  var xhttp = new XMLHttpRequest();
 			  xhttp.onreadystatechange = function() {

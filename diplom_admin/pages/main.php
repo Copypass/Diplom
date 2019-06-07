@@ -39,7 +39,7 @@ if(!isset($_SESSION["id"]))
 		  timerId = setTimeout(function(){ loadDoc()}, 1000);
 		}
 	  };
-	  xhttp.open("GET", "history_update.php", true);
+	  xhttp.open("GET", "actual_history_update.php", true);
 	  xhttp.read();
 	}
 	</script>
