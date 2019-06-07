@@ -104,7 +104,6 @@ if(!isset($_SESSION["id"]))
                                 <div class="span12">
                                     <form class="form-horizontal">
                                       <fieldset>
-									  Выберите как сортировать данные.
                                         <div class="control-group">
                                           <label class="control-label" for="select01">Сортировать по</label>
                                           <div class="controls">
@@ -118,6 +117,71 @@ if(!isset($_SESSION["id"]))
                                           </div>
                                         </div>
 										<div id = "history">
+										<?php
+										if(isset($_SESSION['id']))
+										{
+											$que = mysqli_query($db,'SELECT key_num,identificator.name,identificator.img,identificator.phone,gate.name as "gate",time,access  FROM activation_log JOIN identificator on identificator.key_num = activation_log.key_id JOIN gate on gate.gate_id= activation_log.gate_id ORDER BY time DESC;');			
+											if ( $que )
+											{
+												while ($row = mysqli_fetch_assoc($que))
+												{
+													$i++;
+													$key_id = $row["key_num"];
+													$name = $row["name"];
+													$img = $row["img"];
+													$phone = $row["phone"];
+													$gate = $row["gate"];
+													$time = $row["time"];
+													$access = $row["access"];
+													if($access)
+													{
+														$alert="<div class = 'alert alert-success'> Доступ разрешён</div>";
+													}else
+													{
+														$alert="<div class = 'alert alert-error'> Доступ запрещён</div>";
+													}
+													if($img == "") 
+														$img = "../images/null foto.png";
+													if(($i%2) != 0)
+													{
+														$section="<div class='row-fluid'>";
+														$section_end = "";
+													}else
+													{
+														$section="";
+														$section_end = "</div>";
+													}
+													echo $section;
+													?>
+
+																									<table class="table table-bordered table-striped">
+																										<tr>
+																											<td>Дата и время</td>
+																											<td><?php echo $time; ?></td>
+																										</tr>
+																										<tr>
+																											<td>Помещение</td>
+																											<td><?php echo $gate; ?></td>
+																										</tr>
+																										<tr>
+																											<td>идентификатор</td>
+																											<td><?php echo $key_id; ?></td>
+																										</tr>
+																										<tr>
+																											<td>Телефон:</td>
+																											<td><?php echo $phone; ?></td>
+																										</tr>
+																									</table>
+																								<?php echo $alert; ?>
+															<?php
+														
+												}
+												
+											} 
+										}
+											
+										
+									?>
 										</div>
                                       </fieldset>
                                     </form>
