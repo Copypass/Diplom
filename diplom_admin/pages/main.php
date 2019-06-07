@@ -31,6 +31,7 @@ if(!isset($_SESSION["id"]))
 	var timerId = setTimeout(function(){loadDoc()}, 1000); 
 	function loadDoc() { 
 	  var xhttp = new XMLHttpRequest(); 
+	  xhttp.open("GET", "192.168.1.54/diplom/pages/actual_history_update.php", true); 
 	  xhttp.onreadystatechange = function() { 
 		if (this.readyState == 4 && this.status == 200) {	 
  
@@ -39,7 +40,6 @@ if(!isset($_SESSION["id"]))
 		  timerId = setTimeout(function(){ loadDoc()}, 1000); 
 		} 
 	  }; 
-	  xhttp.open("GET", "history_update.php", true); 
 	  xhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
 	  xhttp.read(); 
 	} 
