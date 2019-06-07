@@ -105,7 +105,9 @@ if(!isset($_SESSION["id"]))
                                      <form class="form-horizontal">
                                       <fieldset>
                                         <legend>История доступа</legend>
-										<input type="text" class="input-xlarge datepicker" id="date01" value="07/01/19">
+										<div class="controls">
+                                            <input type="text" class="input-xlarge datepicker" id="date01" value="07/1/2019">
+                                          </div>
 												<div id="history">
 												</div>   
 								
