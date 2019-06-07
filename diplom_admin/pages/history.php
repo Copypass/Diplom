@@ -116,6 +116,16 @@ if(!isset($_SESSION["id"]))
                                             </select>
                                           </div>
                                         </div>
+										<table class="table table-bordered table-striped alert-success">
+										<thead>
+                                            <tr>
+                                                <th>ФИО</th>
+                                                <th>Дверь</th>
+                                                <th>Группа</th>
+												<th>Время</th>
+												<th>Доступ</th>
+                                            </tr>
+                                        </thead>
 										<div id = "history">
 										<?php
 										if(isset($_SESSION['id']))
@@ -125,7 +135,6 @@ if(!isset($_SESSION["id"]))
 											{
 												while ($row = mysqli_fetch_assoc($que))
 												{
-													$i++;
 													$key_id = $row["key_num"];
 													$name = $row["name"];
 													$img = $row["img"];
@@ -142,19 +151,7 @@ if(!isset($_SESSION["id"]))
 													}
 													if($img == "") 
 														$img = "../images/null foto.png";
-													if(($i%2) != 0)
-													{
-														$section="<div class='row-fluid'>";
-														$section_end = "";
-													}else
-													{
-														$section="";
-														$section_end = "</div>";
-													}
-													echo $section;
 													?>
-
-																									<table class="table table-bordered table-striped">
 																										<tr>
 																											<td>Дата и время</td>
 																											<td><?php echo $time; ?></td>
@@ -171,7 +168,7 @@ if(!isset($_SESSION["id"]))
 																											<td>Телефон:</td>
 																											<td><?php echo $phone; ?></td>
 																										</tr>
-																									</table>
+																									
 																								<?php echo $alert; ?>
 															<?php
 														
@@ -182,7 +179,8 @@ if(!isset($_SESSION["id"]))
 											
 										
 									?>
-										</div>
+											</div>
+										</table>
                                       </fieldset>
                                     </form>
                                 </div>

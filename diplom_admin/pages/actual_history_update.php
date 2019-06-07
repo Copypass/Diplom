@@ -4,6 +4,7 @@
 		ini_set('display_startup_errors', TRUE);
 		session_start();
 		$key_id = "";
+		echo "123";
 		$name = "";
 		$img = "";
 		$phone = "";
@@ -49,16 +50,42 @@
 					}
 					echo $section;
 					?>
-
+													<div class="span6">
+														<!-- block -->
+														<div class="block">
+															<div class="navbar navbar-inner block-header">
+																<div class="muted pull-left"><?php echo $name; ?></div>
+															</div>
+															<div class="block-content collapse in">
+															<div class="span3">
+																<img alt="220x120" style="width: 120px; height: 120px;" src=<?php echo "'$img'"; ?> >
+															</div>
+																<fieldset style="margin-top: 0px;">
+																	<table class="table table-bordered table-striped">
 																		<tr>
-																			<td><?php echo $name; ?></td>
-																			<td><?php echo $gate; ?></td>
-																			<td>группа</td>
+																			<td>Дата и время</td>
 																			<td><?php echo $time; ?></td>
-																			<td><?php echo $access; ?></td>
 																		</tr>
-																		
-																<?php// echo $alert; ?>
+																		<tr>
+																			<td>Помещение</td>
+																			<td><?php echo $gate; ?></td>
+																		</tr>
+																		<tr>
+																			<td>идентификатор</td>
+																			<td><?php echo $key_id; ?></td>
+																		</tr>
+																		<tr>
+																			<td>Телефон:</td>
+																			<td><?php echo $phone; ?></td>
+																		</tr>
+																	</table>
+																</fieldset>
+																<?php echo $alert; ?>
+															</div>
+														</div>
+														<!-- /block -->
+													</div>
+												<?php echo $section_end; ?>
 							<?php
 						
 				}
