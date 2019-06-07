@@ -31,11 +31,10 @@ if(!isset($_SESSION["id"]))
 	var timerId = setTimeout(function(){loadDoc();}, 100);
 	
 	function loadDoc() {
-	  alert("123");
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {	
-
+		  alert("123");
 		  document.getElementById("history").innerHTML = this.responseText;
 		  timerId = setTimeout(function(){ loadDoc();}, 1000);
 		}
