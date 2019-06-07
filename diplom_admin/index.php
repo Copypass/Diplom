@@ -37,7 +37,7 @@ if(isset($_GET['act']))
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Авторизация</title>
-<link rel="stylesheet" href="bootstrap/css/login.css" type="text/css">
+<link rel="stylesheet" href="pages/bootstrap/css/login.css" type="text/css">
 
 <div id="main-wrapper" class="b-login-main-wrapper"><div class="i-report-wr"><div class="i-form-wr"><div class="i-list-wr">
 <div id="overlay" class="hide"></div>
