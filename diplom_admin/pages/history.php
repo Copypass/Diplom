@@ -39,8 +39,14 @@ if(!isset($_SESSION["id"]))
 				  timerId = setTimeout(function(){ loadDoc()}, 1000);
 				}
 			  };
-			  xhttp.open("GET", "history_update.php", false);
+			  xhttp.open("GET", "history_update.php", true);
 			  xhttp.read();
+			}
+			
+			function addSelect()
+			{
+				type = document.getElementById("select_id").value; 
+				alert(type);
 			}
 			</script>
     </head>
@@ -109,13 +115,15 @@ if(!isset($_SESSION["id"]))
                                         <div class="control-group">
                                           <label class="control-label" for="select01">Сортировать по</label>
                                           <div class="controls">
-                                            <select id="select01" class="chzn-select">
+                                            <select id="select01" class="" onchange="addSelect()">
 											  <option>Сначала актуальные</option>
                                               <option>Пользователям</option>
                                               <option>Точкам доступа</option>
                                               <option>Группе</option>
                                               <option>Дате</option>
                                             </select>
+											<div id = "select02">
+											</div>
                                           </div>
                                         </div>
 										<div id = "history">
