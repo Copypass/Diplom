@@ -32,7 +32,8 @@ if(!isset($_SESSION["id"]))
 	function loadDoc() { 
 	  var xhttp = new XMLHttpRequest(); 
 	  xhttp.onreadystatechange = function() { 
-		alert(this.readyState);
+	  alert(this.readyState);
+	  alert(this.status);
 		if (this.readyState == 4 && this.status == 200) {	 
  
 		  document.getElementById("history").innerHTML = this.responseText; 
@@ -40,7 +41,7 @@ if(!isset($_SESSION["id"]))
 		  timerId = setTimeout(function(){ loadDoc()}, 1000); 
 		} 
 	  }; 
-	  xhttp.open("https://corsproxy.github.io", true); 
+	  xhttp.open("GET", "history_update.php", true); 
 	  xhttp.read(); 
 	} 
 	</script> 
