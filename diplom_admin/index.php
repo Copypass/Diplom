@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 session_start();
 include_once("config.php");
 $authtxt = "";
-if(isset($_POST['username']))
+if(isset($_GET['username']))
 {
 	$login=mysqli_real_escape_string($db,$_GET['username']);
     $password = md5(mysqli_real_escape_string($db,$_GET["password"]));
@@ -21,7 +21,7 @@ if(isset($_POST['username']))
 			$_SESSION['password']=$row[2];
 			$_SESSION['type']=$row[3];
 			$authtxt = "Вы успешно авторизированы";
-			header("Location:pages/main.php");
+			header("Location:main.php");
 		}
 	}else
 	{
@@ -44,7 +44,7 @@ if(isset($_GET['act']))
 <div id="content" class="tab-content active" data-tabid="tab1"><div id="login-wrapper">
 
 <div id="login-form"><div id="login-form-form">
-<form name="login" id="logon-form" method="POST" action="">
+<form name="login" id="logon-form" method="GET" action="">
 
 
 <table>
